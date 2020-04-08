@@ -4,7 +4,7 @@ public class QuantityMeasurement {
 
     public double value;
 
-    public QuantityMeasurement(double value){
+    public QuantityMeasurement(Double value){
         this.value = value;
     }
 
@@ -12,7 +12,7 @@ public class QuantityMeasurement {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        QuantityMeasurement that = (QuantityMeasurement) o;
-        return Double.compare(that.value, value) == 0;
+        QuantityMeasurement quantity = (QuantityMeasurement) o;
+        return Double.compare(quantity.value, value) == 0;
     }
 }
