@@ -64,4 +64,12 @@ public class LengthTest {
         LengthCalculate calculate1 = new LengthCalculate(LengthCalculate.Unit.INCH,1.0);
         Assert.assertNotEquals(calculate,calculate1);
     }
+
+    @Test
+    public void given0FeetAnd0InchShouldReturnEqual(){
+        LengthCalculate calculate = new LengthCalculate(LengthCalculate.Unit.FEET,0.0);
+        LengthCalculate calculate1 = new LengthCalculate(LengthCalculate.Unit.INCH,0.0);
+        boolean compareCheck = calculate.compare(calculate1);
+        Assert.assertTrue(compareCheck);
+    }
 }
