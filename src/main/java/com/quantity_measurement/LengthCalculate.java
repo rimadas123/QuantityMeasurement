@@ -2,41 +2,17 @@ package com.quantity_measurement;
 
 public class LengthCalculate {
 
-    private static final double FEET_TO_INCH = 12.0 ;
-    private static final double INCH_TO_FEET = 1.0;
-    private static final double YARD_TO_FEET = 3.0;
-    private static final double YARD_TO_INCH = 36.0;
-    private final Unit unit;
+    public final UnitConverter unit;
+    public final double value;
 
-    public enum Unit{
-        FEET,INCH,YARD
-    }
 
-    private final double value;
-
-    public LengthCalculate(Unit unit,Double value){
+    public LengthCalculate(UnitConverter unit,Double value){
         this.unit = unit;
         this.value = value;
     }
 
-    public boolean compare(LengthCalculate thatLength) {
-        if (this.unit.equals(Unit.FEET) && thatLength.unit.equals(Unit.FEET))
-            return Double.compare(this.value, thatLength.value) == 0;
-        if (this.unit.equals(Unit.FEET) && thatLength.unit.equals(Unit.INCH))
-            return Double.compare(this.value * FEET_TO_INCH, thatLength.value) == 0;
-        if (this.unit.equals(Unit.INCH) && thatLength.unit.equals(Unit.INCH))
-            return Double.compare(this.value, thatLength.value) == 0;
-        if (this.unit.equals(Unit.INCH) && thatLength.unit.equals(Unit.FEET))
-            return Double.compare(this.value * INCH_TO_FEET, thatLength.value*FEET_TO_INCH) == 0;
-        if (this.unit.equals(Unit.FEET) && thatLength.unit.equals(Unit.YARD))
-            return Double.compare(this.value , thatLength.value * YARD_TO_FEET) == 0;
-        if (this.unit.equals(Unit.YARD) && thatLength.unit.equals(Unit.INCH))
-            return Double.compare(this.value , thatLength.value / YARD_TO_INCH) == 0;
-        if (this.unit.equals(Unit.INCH) && thatLength.unit.equals(Unit.YARD))
-            return Double.compare(this.value/YARD_TO_INCH , thatLength.value) == 0;
-        if (this.unit.equals(Unit.YARD) && thatLength.unit.equals(Unit.FEET))
-            return Double.compare(this.value , thatLength.value /YARD_TO_FEET) == 0;
-        return false;
+    public boolean compare(LengthCalculate l1, LengthCalculate l2) {
+        return this.unit.compare(l1,l2);
     }
 
     @Override
