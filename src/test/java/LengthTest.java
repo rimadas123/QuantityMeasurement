@@ -149,4 +149,12 @@ public class LengthTest {
         boolean compareCheck = calculate.compare(calculate,calculate1);
         Assert.assertTrue(compareCheck);
     }
+
+    @Test
+    public void given2InchAnd5CentimeterShouldReturnEqual(){
+        LengthCalculate calculate = new LengthCalculate(UnitConverter.INCH,2.0);
+        LengthCalculate calculate1 = new LengthCalculate(UnitConverter.CENTIMETER,5.0);
+        boolean compareCheck = calculate.compare(calculate,calculate1);
+        Assert.assertTrue(compareCheck);
+    }
 }
