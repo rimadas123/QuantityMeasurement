@@ -2,7 +2,7 @@ package com.quantity_measurement;
 
 public enum UnitConverter {
 
-    FEET(12.0),INCH(1.0),YARD(36.0);
+    FEET(12.0),INCH(1.0),YARD(36.0),CENTIMETER(1.0/2.5);
 
     private final double convertedValue;
 
