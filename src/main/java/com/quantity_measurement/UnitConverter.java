@@ -23,4 +23,14 @@ public enum UnitConverter {
             this.unitConversion = unitConversion;
         }
     }
+
+    public enum WEIGHTS {
+        KILOGRAM(1000.0),GRAMS(1.0),TONNES(1000000.0);
+
+        public final double unitConversion;
+
+        WEIGHTS(double unitConversion){
+            this.unitConversion = unitConversion;
+        }
+    }
 }

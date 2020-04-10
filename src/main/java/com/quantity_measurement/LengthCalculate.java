@@ -4,6 +4,7 @@ public class LengthCalculate {
 
     public UnitConverter.LENGTH length;
     public UnitConverter.VOlUME vol;
+    public UnitConverter.WEIGHTS weights;
     public double unit;
     public final double value;
 
@@ -22,6 +23,12 @@ public class LengthCalculate {
         this.unit = vol.unitConversion;
     }
 
+    public LengthCalculate(UnitConverter.WEIGHTS weights, Double value){
+        this.weights = weights;
+        this.value = value;
+        this.unit = weights.unitConversion;
+    }
+
     public boolean compare(LengthCalculate l1, LengthCalculate l2) {
         return l1.equals(l2);
     }
@@ -38,6 +45,7 @@ public class LengthCalculate {
         return Double.compare(quantity.value, value) == 0 &&
                 Double.compare(quantity.unit, unit) == 0 &&
                 vol == quantity.vol &&
+                weights == quantity.weights &&
                 length == quantity.length ||
                 measureUnits.compare(this,quantity);
     }
