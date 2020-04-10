@@ -13,4 +13,14 @@ public enum UnitConverter {
             this.unitConversion = unitConversion;
         }
     }
+
+    public enum VOlUME {
+        GALLON(3.78),LITERS(1.0), MILLILITERS(1.0/1000.0);
+
+        public final double unitConversion;
+
+        VOlUME(double unitConversion) {
+            this.unitConversion = unitConversion;
+        }
+    }
 }
