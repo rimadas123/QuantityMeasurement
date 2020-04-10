@@ -33,4 +33,14 @@ public enum UnitConverter {
             this.unitConversion = unitConversion;
         }
     }
+
+    public enum TEMPERATURE {
+        FAHRENHEIT(100.0),CELSIUS(212);
+
+        public final double unitConversion;
+
+        TEMPERATURE(double unitConversion){
+            this.unitConversion = unitConversion;
+        }
+    }
 }

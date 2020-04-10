@@ -5,6 +5,7 @@ public class LengthCalculate {
     public UnitConverter.LENGTH length;
     public UnitConverter.VOlUME vol;
     public UnitConverter.WEIGHTS weights;
+    public UnitConverter.TEMPERATURE temperature;
     public double unit;
     public final double value;
 
@@ -29,6 +30,12 @@ public class LengthCalculate {
         this.unit = weights.unitConversion;
     }
 
+    public LengthCalculate(UnitConverter.TEMPERATURE temperature, Double value){
+        this.temperature = temperature;
+        this.value = value;
+        this.unit = temperature.unitConversion;
+    }
+
     public boolean compare(LengthCalculate l1, LengthCalculate l2) {
         return l1.equals(l2);
     }
@@ -44,6 +51,7 @@ public class LengthCalculate {
         LengthCalculate quantity = (LengthCalculate) o;
         return Double.compare(quantity.value, value) == 0 &&
                 Double.compare(quantity.unit, unit) == 0 &&
+                temperature == quantity.temperature &&
                 vol == quantity.vol &&
                 weights == quantity.weights &&
                 length == quantity.length ||
