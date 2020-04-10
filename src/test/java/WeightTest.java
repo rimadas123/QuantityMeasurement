@@ -20,7 +20,7 @@ public class WeightTest {
     }
 
     @Test
-    public void given1TonneAnd1000GramShouldReturn1001Kg(){
+    public void given1TonneAnd1000GramsShouldReturn1001Kg(){
         LengthCalculate calculate = new LengthCalculate(UnitConverter.WEIGHTS.TONNES,1.0);
         LengthCalculate calculate1 = new LengthCalculate(UnitConverter.WEIGHTS.GRAMS,1000.0);
         double add = calculate.addMethod(calculate,calculate1, UnitConverter.WEIGHTS.KILOGRAM.unitConversion);
